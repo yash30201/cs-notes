@@ -57,5 +57,55 @@ Let us take the example of my college
 
 ---
 
-## 3 - Tier Architecture
+## 3 - Tier Architecture in DBMS
+
+### DBMS 3-Tier Architecture
+
+Here, database is divided into three interrelated + independent modules
+
+**Physical Level** <--------> **Conceptual Level** <----------> **External Level**
+
+> The first two boast physical data independence while latter two boast logical data independence
+
+#### Physical Level
+At this level, info about the location of database objects in the physical data store is kept.
+
+#### Conceptual Level
+At conceptual level, data is stored in various interrelated data collections/tables - Complete data is stored here in logical+conceptual form.
+
+#### External Level
+This offers different views of the data in terms of conceptual level data tables. This level caters to the specific needs of the user requiring data.
+
+<br>
+
+### Data independence
+
+This means change at one level of the architecture should not affect another level.
+
+#### Physical Date Independence
+Change in physical location of data should not affect conceptual level or external view. Its easy to achieve
+
+#### Conceptual Data Independence
+Change in conceptual schema should not affect external view. This is hard to achieve as changes in conceptual schema are reflected in the user's view.
+
+<br>
+
+### Phases of database design
+
+There are four phases of database designing - 
+
++ Requirements : *Gather requirements of the database*
++ Conceptual Design : *Requirements of database are captured using high level conceptual data model. For eg: ER model*
++ Logical Design : *Data is represented in logical form. For eg : ER diagram is generated from ER model to signify logical relations*
++ Physical Design : *Implementation using DBMS like oracle, DB2, MySQL, MongoDB*
+
+<br>
+
+### Advantages of DBMS
+
+Opposite of all the points in [problems in file system](#Problems-with-file-system) and :
++  Multiple data views
+
+---
+
 
