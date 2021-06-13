@@ -2,4 +2,4 @@
 
 ### Contents :
 
-+ [Introduction](DBMS/notes/introduction.md)
++ [Introduction](notes/introduction.md)
