@@ -214,6 +214,30 @@ Read the [article](https://www.geeksforgeeks.org/multimedia-database/) itself in
 
 ---
 
-## Use of DBMS in system software
+## Interaction between dbms and system
 
-> > > > To start from here
+### Ways to issue interact with database using DBMS
+
+#### Source program 
+\[Discouraged\] Writing a source program with i/o calls using a general-purpose programming language which is then fed to a compiler.
+#### DML
+\[Versatile\] Writing commands in DML after which a processor converts into source program with i/o calls which is then fed to a compiler.
+#### Query language
+\[Fastest\] Writing commands in special query language defined by DBMS which is interpreted by query-language interpreter and then dbms routines are calls.
+
+<br>
+
+### Actions during a query
+
+1) A request is raised by user using application
+2) Request is stated in terms of subschema accessible to the user so DBMS examine the subschema definition.
+3) Relation between schema and subschema is examined to generate request in terms of overall logical database structure.
+4) Data mapping is examined to get the location of records in files required.
+5) The request for I/O operation at these locations are passed to the operation system.
+6) The operation system processes the requests
+7) All the requested data is moves to central memory after processing and conversion by DBMS according to schema and subschema.
+8) Finally DBMS returns control to the application.
+
+---
+
+
