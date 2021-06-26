@@ -146,4 +146,38 @@ Then we cannot merge the two tables completely hence there will be a minimum of 
 
 <br>
 
-## 
+## Generalisation, Specialisation and Aggregation
+These are used in data abstraction.
+
+<br>
+
+### Generalisation
+> This is a **Bottom-up Approach**
+
+This is the process of extracting common set of properties from a bunch of entities and create a more generalised version of those. For eg, from STUDENT and FACULTY , we can create a more generalised entity PERSON.
+
+<img src="../assets/ER_Model/generalization.png" alt="Generalisation-example" width="400"/>
+
+<br>
+
+### Specialisation
+> This is a **Top-down Approach**
+
+This is the process of subdividing an entity into sub-entities based of theie specific characteristics. For eg, we can subdivide EMPLOYEE into DEVELOPER, MANAGER, etc.
+
+<img src="../assets/ER_Model/specialization.png" alt="Specialisation-example" width="400"/>
+
+<br>
+
+### Aggregation
+> Represent relationships as higher level entity sets
+
+Since ER diagram is not capable of representing relationship between an entity and a *relationship*(Comprising of entities and in-between relation), therefore for such cases, we aggregate the components of the *relationship* and create/treat it as a new higher level entity. For eg, EMPLOYEE is working in a PROJECT and this specific combination requires a machine, so - 
+
+<img src="../assets/ER_Model/aggregation.png" alt="Aggregation-example" width="400"/>
+
+<br>
+---
+<br>
+
+## Recursive relationships in ER Diagrams
