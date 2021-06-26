@@ -103,7 +103,7 @@ Just like how a faculty can be subclass of both an employee as well as alumni.
 
 ### Union
 
-Its represented just like branch structure with a circle with an `U` writen inside it. The union entity type's branch has a `U` mark in between with open ends pointing to the union node.
+Its represented just like branch structure with a circle with an `U` written inside it. The union entity type's branch has a `U` mark in between with open ends pointing to the union node.
 
 Union -> RC = union of vehicle and carModel
 Subclass -> car model and truck are inherited from vehicle
@@ -163,7 +163,7 @@ This is the process of extracting common set of properties from a bunch of entit
 ### Specialisation
 > This is a **Top-down Approach**
 
-This is the process of subdividing an entity into sub-entities based of theie specific characteristics. For eg, we can subdivide EMPLOYEE into DEVELOPER, MANAGER, etc.
+This is the process of subdividing an entity into sub-entities based of their specific characteristics. For eg, we can subdivide EMPLOYEE into DEVELOPER, MANAGER, etc.
 
 <img src="../assets/ER_Model/specialization.png" alt="Specialisation-example" width="400"/>
 
@@ -177,7 +177,54 @@ Since ER diagram is not capable of representing relationship between an entity a
 <img src="../assets/ER_Model/aggregation.png" alt="Aggregation-example" width="400"/>
 
 <br>
+
 ---
+
 <br>
 
 ## Recursive relationships in ER Diagrams
+<br>
+
+Its a relationship where the entities in subject are same. They take part in the same relationship with different role in each instance. For eg, EMPLOYEE, its recursive relationship can be REPORTS_TO. Thus each employee **can** (CEO cannot get supervised and noobs cannot supervise) play role as - 
+1) Supervisor
+2) Subordinates
+
+<img src="../assets/ER_Model/recursive.jpg" alt="Recursive-relation-example" width="300"/>
+
+<br>
+
+### Cardinality observation
+
++ Supervisor of
+    + Max = N
+    + Min = ZERO
++ Subordinate of
+    + Max = 1
+    + Min = 0
+
+<br>
+
+---
+
+<br>
+
+## Impedance mismatch in DBMS
+<br>
+
+This is the phenomena of problems due to differences between the database model and the programming language model(incase when we use a general purpose programming language for communicating with the database management system)
+
+The problems which arise in the following categories-
+
+#### Data-types of the attributes
+The data-type may differ between different programming languages and the data type in the data model. So matching and interpolating between data type of data model to the data types available in the programming languages(like Java, C, C++ ...) becomes a necessity.
+
+#### Data access in tables
+Since results of queries in data base are tuples or set of tuples, so proper binding to map the query result data structure to an appropriate data structure in the programming language becomes necessity.
+
+> Impedance mismatch is much less of a problem incase of a special database programming language designed specifically for it. For eg, SQL
+
+---
+
+
+
+
