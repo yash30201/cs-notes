@@ -203,9 +203,7 @@ Its a relationship where the entities in subject are same. They take part in the
     + Min = 0
 
 <br>
-
 ---
-
 <br>
 
 ## Impedance mismatch in DBMS
