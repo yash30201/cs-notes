@@ -80,3 +80,62 @@ These are the irregularities which arise when doing some operation in referenced
 ### Super Keys
 These are the set of attributes that allows us to identify unique rows(tuples) in a given relation. Out of these keys, we can always choose a proper subset among these to be used at `primary key`. Such subsets are called `candidate keys`. If there is a combination of two or more attributes in primary key then we call it `composite key`.
 
+
+<br>
+
+---
+<br>
+
+## Types of keys in relational model
+<br>
+
+There are five terminologies related to keys - 
+
+### Candidate Keys
+
+It is the **minimial** set of attributes which can uniquely identify a tuple(*row*) in a relation(*table*).
++ There can be more than one candidate keys.
++ Its value is unique and not-null for every tuple.
++ It can be simple as well as composite.
+
+> In sql server, `UNIQUE` differs from `PRIMARY KEY` because the former allows a null at most once but the latter has no possibility of being null.
+<br>
+
+### Super Key
+
+Adding one or zero attributes to candidate keys generates super key. Each candidate key is a super key but the vice-versa is not true.
+
+<br>
+
+### Primary Key
+
+One of the candidate keys can be chosen as primary key.
+> Only one primary key exits in a relation
+
+<br>
+
+### Alternate Key
+
+A chosen candidate key other than primary key is called alternate key.
+> Only one alternate key **can** exits.
+
+<br>
+
+### Foreign Key
+
+If an attribute can only take values which are present as values of some other attribute then it's called a foreign key.
+
+> Referencing relation ---> Referenced relation
+
+<br>
+
+---
+<br>
+
+## 
+
+
+
+
+
+
