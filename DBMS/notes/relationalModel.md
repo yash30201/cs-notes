@@ -132,7 +132,71 @@ If an attribute can only take values which are present as values of some other a
 ---
 <br>
 
+## Strategies for Schema designing
+<br>
+
+### Strategies
+
+#### Top-down
+In this, we start by defining the high level entities then going on creating new low level entities based on them. Entity relationship model is example to this.
+
+#### Bottom-up
+In this, we start by defining most fundamental entities and then go on creating new high level entities.
+
+#### Inside-out strategy
+This is a special case of bottom up strategy where sole focus is on creating some set of central entities and then expanding in the vicinity of these entities. Contrary to bottom up, where we just create all the fundamental entities as and when required, here we start by first creating all the entities which we deem as central.
+
+#### Mixed strategy
+Mixed = requirements are partitions according to top-down and then each part of this schema is designed according to bottom-up strategy.
+
+<br>
+
+---
+<br>
+
+## Schema integration 
+<br>
+
+It is a common practice in real-world scenarios where we design and develop different individual schemas and then integrate and merge them into one. This task is divided into following subtasks - 
+
+### Identifying conflicts
+
+There may occur the following types if conflicts - 
+
+#### Naming conflict
+Two types of naming conflicts may arise, *synonyms and homonyms* - 
++ Synonyms - Two entities with different names may represent same data(redundancy arise)
++ Homonyms - Same name represents different concepts.
+
+#### Type conflicts
+A type name in one schema can be some other concept apart from *type* in the other schema.
+
+#### Domain Conflicts
+Evident by name.
+
+<br>
+
+### Modifying views to conform to one another
+
+Still independent modification done to as to comply with other schemas rules as closest as possible
+
+<br>
+
+### Merging and restructuring of views
+
+The global schemas are created by merging these individual schemas.This is the hardest part in real-world databases and involve considerable amount og human intervention and negotiation to resolve conflicts to settle on most reasonable and acceptable solution.
+
+> After this, restructuring can also be down to remove redundancies and any unnecessary complexity.
+
+<br>
+
+---
+<br>
+
 ## 
+
+
+
 
 
 
