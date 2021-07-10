@@ -1,4 +1,8 @@
 # Normalisation
+<br>
+
+Data Normalisation reduces data redundancy.
+
 
 ## Normal Forms in DBMS
 <br>
@@ -79,3 +83,50 @@ Rules -
     + M : N - Have 3 separate tables 
     + 1 : N - Merge the relationship to the N-side
     + 1 : 1 - Merge the relationship to one the entity
+
+<br>
+
+---
+<br>
+
+## Dependency preserving decomposition
+<br>
+
+The decomposition of a relation R with F<sup>+</sup> , decomposed into R1, R2, ... Rn is called dependency preserving decomposition if union of all F1+, F2+, .... Fn+ results in F+.
+
+### Steps to get enclosure of a subset
+
+Given a relation R with its FDs, we need to generate the attribute enclosure of some subset of R.
+
+To do this, write all the combination except the complete set itself of the subset. The write their enclosures(remove the trivial ones).
+
+See the first [example](https://www.geeksforgeeks.org/data-base-dependency-preserving-decomposition/). Its awesome.
+
+
+<br>
+
+---
+<br>
+
+## Lossless Decomposition in DBMS
+<br>
+
+R -> R1 and R2 is called lossless decomposition if natural join of R1 and R1 results in original relation R and its functional dependency.
+
+The requirement for this to be possible is that the common element to be selected must be a candidate key or super key in at least one of the relations(R1, R2)
+
+=> R1 intersection R2 == common element -> R1  (....{1})
+and
+=> R1 intersection R2 == common element -> R2  (....{2})
+
+At least one of the functional dependency ({1} , {2}) must be true for this decomposition to be lossless decomposition.
+
+<br>
+
+---
+<br>
+
+## Domain key normal form in DBMS
+
+
+
