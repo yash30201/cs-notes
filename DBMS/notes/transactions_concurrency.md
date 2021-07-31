@@ -172,6 +172,201 @@ T1 | T2
 <br>
 
 ## Lock based concurrency control protocols
+<br>
+
+> Locks are implemented using linked list
+
+Though concurrent and interleaving execution of transactions may lead to problems like irrecoverable schedule, inconsistency and many more threats.
+
+But the effect in efficiency is huge to dive into this paradigm. So for concurrency, we need protocols so that ACID properties are strictly followed. So we use concurrency control protocols : 
+
++ Lock Based Protocols
+    + Basic 2-Phase Locking
+    + Conservative 2-PL
+    + Strict 2-PL
+    + Rigorous 2-PL
++ Graph Based Protocols
++ Timestamp based protocols
++ Multiple granularity protocol
++ Multi-version protocol
+
+<br>
+
+---
+<br>
+
+## Lock Based Protocols
+<br>
+
+They allow accessing and owning of database items by concurrently executing transactions in mutually exclusive manner. There are two types of lock normally - 
+
+Let A be a data item then 
+
+**Shared Lock - S(A)** : Read-only lock.
+**eXclusive lock - X(A)** : Read-write lock.
+
+Locks can be upgraded from shared to exclusive and downgraded from exclusive to shared.
+
+### Problems in basic / simple locking (Binary locking)
+
+#### Deadlock
+
+#### Starvation
+
+To overcome these, we use further more sound protocols
+
+<br>
+
+---
+<br>
+
+## Two Phase Locking
+<br>
+
+A transaction is said to follow 2-PL is the locking and unlocking are done in separate two ways, namely growing phase and shrinking phase.
+
+> **LOCK POINT** : for a transaction, lock point is the point where growing phase ends
+
+**Advantages** : Ensured conflict serialisability.
+
+**Disadvantages** : Cascade rollback is possible, deadlocks and starvations are possible
+
+
+Categories of 2-PL - 
+
+<br>
+
+### Strict 2-PL
+<br>
+
+Required all the exclusive locks held by the transaction to be released only after commit.
+
+Thus makes transactions recoverable and cascadeless. Deadlocks are still possible.
+
+<br>
+
+### Rigorous 2-PL
+<br>
+
+Required all the exclusive as well as shared locks held by the transaction to be released only after commit.
+
+Thus makes transactions recoverable and cascadeless. Deadlocks are still possible.
+
+<br>
+
+### Conservative 2-PL (static 2-PL)
+
+This protocol requires the transaction to lock all the items it access before the Transaction begins execution by pre-declaring its read-set and write-set. If any of the predeclared items needed cannot be locked, the transaction does not lock any of the items, instead, it waits until all the items are available for locking. 
+
+Thus, its deadlock free, but cascading rollback and starvation is still possible.
+
+
+<br>
+
+---
+<br>
+
+## Timestamp ordering protocols
+<br>
+
+**TS(T)** : Timestamp of transaction T
+
+Here, main idea is to order transactions on the basis of their timestamps.
+
+Let, 
+
+**W_TS(X)** : be the largest timestamp of any transaction that executed write(X) successfully.
+
+**R_TS(X)** : be the largest timestamp of any transaction that executed read(X) successfully. 
+
+Basic time stamp ordering protocol states : 
+
+Try to serialise all the operations and resolve conflicts according to the timestamps of their transaction. 
+
+Whenever a Transaction T issues a W_item(X) operation, check the following conditions: 
++ If R_TS(X) > TS(T) or if W_TS(X) > TS(T), then abort and rollback T and reject the operation. else,
++ Execute W_item(X) operation of T and set W_TS(X) to TS(T).
+
+
+Whenever a Transaction T issues a R_item(X) operation, check the following conditions: 
++ If W_TS(X) > TS(T), then abort and reject T and reject the operation, else
++ If W_TS(X) <= TS(T), then execute the R_item(X) operation of T and set R_TS(X) to the larger of TS(T) and current R_TS(X). 
+
+<br>
+
+---
+<br>
+
+## Deadlock prevention protocols
+<br>
+
+### Wait-die
+
+If older has problems, then he waits.
+
+If younger has problems, then he dies.
+
+<br>
+
+### Wound-wait
+
+If older has problems, then he kills younger.
+
+If younger has problems, then he waits.
+<br>
+
+Both schemes put the younger ones at disadvantage!!
+
+
+<br>
+
+---
+<br>
+
+## Transaction isolation levels
+
+General transaction isolation levels : 
+
+### Dirty Read
+
+Its a situation when a transactions reads a data that has been modified but not yet committed.
+
+### Non Repeatable read
+
+It occurs when a transaction reads the same row twice and gets a different value each time.
+
+Eg : R<sub>T1</sub>(X) -> W<sub>T2</sub>(X) -> commit(T2) -> R<sub>T1</sub>(X)
+
+### Phantom read
+
+This happens when two same queries fetch different rows.
+
+Eg : due to the search criteria being changed
+
+<br>
+
+Based on these, SQL defines standard four isolation levels(in increasing level of isolation) :
+
+### Read uncommitted 
+
++ Lowest level of isolation.
++ Allows dirty read
+
+### Read Committed
+
++ Dirty read not allowed
++ Transactions holds the write locks until they commit to facilitate this
+
+### Repeatable read 
+
++ Both read and write locks are help until commit.
+
+### Serialisable
+
+A schedule of operations such that concurrent operations are guaranteed to be serialisable and appear to serially executing.
+
+
+
 
 
 
