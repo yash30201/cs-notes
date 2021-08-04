@@ -8,4 +8,4 @@
 
 ## [OS](/OS)
 
-> From  [whimsical](https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ)
+> From  [whimsical](https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ) and [geeks](https://www.geeksforgeeks.org/operating-systems/?ref=ghm)
