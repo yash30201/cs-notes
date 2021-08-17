@@ -137,3 +137,63 @@ A shell is special user program which provide an interface to user to use operat
 
 ### JVM
 It is a specification that provides runtime environment in which java bytecode can be executed. Java bytecode is a assembly language of java
+
+### Booting
+Booting is a startup sequence that starts the operating system of a computer when it is turned on.<br>In some systems, a simple bootstrap loader fetches a more complex boot program from disk, which in turn loads the kernel.
+
+<br>
+
+---
+<br>
+
+## Multi-programming, multi-processing, multi-tasking and multi-threading
+<br>
+
+### Multiprogramming
+A computer running more than one program at a time (like running Excel and Firefox simultaneously) through context switching
+
+
+### Multiprocessing
+A computer using more than one CPU at a time.
+
+### Multitasking
+Its a logical extension of multi-programming as apart from context-switching, it also utilises the concept of time sharing.
+
+### Multithreading 
+Multi threading is an execution model that allows a single process to have multiple code segments (i.e., threads) running concurrently within the “context” of that process.
+
+<br>
+
+---
+<br>
+
+## Monolithic kernel and Micro kernel
+
+### Monolithic kernel
+This kernel is a single large process running entirely in a single address space. All the kernels services exist and execute in kernel address space. There is no provision of user space having less privilege. Eg : Linux
+
+### Micro kernel
+It's an approach where core functionality is isolated from system services via user space for core functionality task and kernel space for system related services. They communicate with each other via IPC(Inter process communication)
+
+> Linux is a monolithic kernel
+
+> Windows very monolithic kernal but is desiged to be a modular(like a microkernel) as OS components run in their own private address space.
+
+> macOS is also unix like but combines the feature of a microkernel (Mach)) and a monolithic kernel (BSD).
+
+<br>
+
+---
+<br>
+
+## Process upon turning up of computer
+
+![12331](https://user-images.githubusercontent.com/54198301/129674034-9180e547-befd-41d7-8b08-d64109ab1eeb.png)
+
+-> Firstly bios performs POST(Power in self test). This initializes various hardware devices, checks RAM and secondary storages.
+-> Secondly, MBR(master boot record), a small program starts when the computer start booting, in order to find the OS in storage, which is generally located in the first sector, first head and first cylinder.
+
+
+-> If POST is successful, the boot loader(GRUB in linux) loads the OS from the computer into memory.(system kernels and user kernels are loaded)
+
+-> Lastly, in Init check the records for initial system state to be loaded, starts up various various supporting services like drivers. For eg, X server daemon manages mouse, keyboard, and display. Its only after atarting this that we see GUI / login screen.
