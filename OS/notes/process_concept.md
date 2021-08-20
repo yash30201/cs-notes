@@ -121,13 +121,14 @@ They share memory, this are not completely isolated.
 There are 3 types of queues : 
 + Job queue
 + Ready queue
-+ Device queue
++ Device queue(queue for processes waiting for I/O or locked area)
 
 > These are implemented using **Linked List**
 
 <br>
 
-The task of managing the processes to be loaded, running and waiting by process scheduler is called process scheduling
+
+They are the softwares whose task is to manage the processes running, select new processes and deciding which process to run.
 
 Comparison among long-term, short-term and medium-term scheduler.
 
@@ -155,3 +156,111 @@ The state of CPU to be saved in context switching includes :
 + I/O State information
 + Accounting information
 
+<br>
+
+---
+<br>
+
+## Inter process communication
+
+Inter-process communication (IPC) is a mechanism that allows processes to communicate with each other and synchronize their actions.
+
+Processes can be independent as well as co-operating process(which require some form of inter process communication)
+
+IPC can be done in two ways - 
+1) Shared memory
+2) Message passing
+
+Shared memory is easy
+
+So see about message passing.
+
+### Message passing
+<br>
+
+### Message passing using communication link
+
+> This is called direct message passing
+
+This requires : 
+
+1. Set-up of communication link if not already set-up
+2. Start exchanging messages using basic primitives like : 
+    1. send(message, destination)
+    3. receive(message, host)
+
+Moreover, there can be three configurations for sender and receiver : 
+
+    *Blocking means synchronous and non-blocking means asynchronous*
+
+1. Blocking send and blocking receive
+2. Non-blocking send and non-blocking receive
+3. Non-blocking send and blocking receive (**most logical and used**)
+
+### Message passing using mailbox messaging
+
+> This method is indirect
+
++ Receiver creates a mail box
++ At a time, there can be only one receiver
++ Mailbox is associated with a port
++ The sender is non-blocking and sends the message
++ The first process which executes the receive will enter in the critical section and all other processes will be blocking and will wait in the mailbox.
+
+
+> Windows XP uses message passing using local procedural calls (LPC)
+
+> Client server applications use sockets, RPC or Pipe
+
+<br>
+
+---
+<br>
+
+## Pipes
+
+Very simplistic analogy is just a water pipe where sender pours water(message) at one end and receiver collets water(message from other end)
+
+Every pipe requires two descriptors, one connected to read from pipe and one connected to write from the pipe.
+
+Parent process | Child process
+
+```
+Write ------>|'''''''''''''''''''|------> Read
+             |      Pipe         |
+Read  <------|,,,,,,,,,,,,,,,,,,,|<------ Write
+```
+
+For two way communication where both sides can simultaneously send and receive messages, it can be implemented simply by Two pipes and sealing one's read and write appropriately
+
+![two way communication](https://i.imgur.com/ck4UxDT.png)
+
+
+<br>
+
+---
+<br>
+
+## Zombie process
+
+These are the processes which have terminated by calling exit() but still have an entry in the process table.
+
+This happens when a child process is created using fork() and then somehow the parent process wasn't able to get child process from process table.
+
+Way to find max number of zombie process so that program will not stop its execution(it differs from system to system along with specifications) : 
+
+```c
+#include<stdio.h>
+#include<unistd.h>
+  
+int main()
+{
+    int count = 0;
+    while (fork() > 0)
+    {
+        count++;
+        printf("%d\t", count);
+    }
+}
+```
+This is zombie process because we are not managing the child process by storing its PIDs
