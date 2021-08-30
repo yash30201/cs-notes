@@ -9,6 +9,7 @@
 + [Thread concepts](notes/thread_concept.md)
 + [Process Scheduling](notes/process_scheduling.md)
 + [Synchronisation](notes/synchronisation.md)
++ [Deadlocks](notes/deadlocks.md)
 
 <!-- 
 [Topic name](notes/topic_file.md) 
