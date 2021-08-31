@@ -10,6 +10,7 @@
 + [Process Scheduling](notes/process_scheduling.md)
 + [Synchronisation](notes/synchronisation.md)
 + [Deadlocks](notes/deadlocks.md)
++ [Memory management strategies](notes/memory_management_strategies.md)
 
 <!-- 
 [Topic name](notes/topic_file.md) 

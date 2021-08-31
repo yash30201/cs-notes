@@ -39,6 +39,9 @@ Banker's algo is an deadlock avoidance algorithms.
 
 > Why is is named banker's ? <br> Because this represents the situation when multiple people are taking loan from bank having limited money.
 
+> This class of algo is called Resource-request algorithm.
+
+
 ### Ostrich Algorithm
 
 Just like an Ostrich, which buries its head in earth when senses danger, just ignore deadlock handling hoping that it will not happen.
