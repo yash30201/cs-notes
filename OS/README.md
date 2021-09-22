@@ -11,6 +11,7 @@
 + [Synchronisation](notes/synchronisation.md)
 + [Deadlocks](notes/deadlocks.md)
 + [Memory management strategies](notes/memory_management_strategies.md)
++ [Virtual memory management](notes/virtual_memory_mgnt.md)
 
 <!-- 
 [Topic name](notes/topic_file.md) 
