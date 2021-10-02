@@ -139,10 +139,10 @@ Hence,
 
 Effective access time = h * (t<sub>tlb</sub>+ t<sub>mem</sub>) + (1 - h) * (t<sub>tlb</sub> + 2t<sub>mem</sub>)
 
-    where,<br>
-    Hit ratio = h<br>
-    TLB access time = t<sub>tlb</sub><br>
-    Memory access time = t<sub>mem</sub>
+where,<br>
+Hit ratio = h<br>
+TLB access time = t<sub>tlb</sub><br>
+Memory access time = t<sub>mem</sub>
 
 <br>
 
