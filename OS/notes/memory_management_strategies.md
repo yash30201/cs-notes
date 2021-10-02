@@ -137,7 +137,7 @@ Note, if it doesn't exits, then CPU again access the Page table memory to retrie
 
 Hence,
 
-Effective access time = h * (t<sub>tlb</sub>+ t<sub>mem</sub>) + (1 - h) * (t<sub>tlb</sub> + t<sub>mem</sub>)
+Effective access time = h * (t<sub>tlb</sub>+ t<sub>mem</sub>) + (1 - h) * (t<sub>tlb</sub> + 2t<sub>mem</sub>)
 
     where,<br>
     Hit ratio = h<br>
