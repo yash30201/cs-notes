@@ -69,7 +69,7 @@ Single threaded vs multi-threaded process
 ---
 <br>
 
-> Multi code processors are a headache for multi thread core
+> Multi threading is a headache for multi core processors
 
 ```cpp
 special_object *get_special_object( void ) {
@@ -81,6 +81,8 @@ special_object *get_special_object( void ) {
     return obj;
 }
  ```
+
+ > BTW this design type is called **Singleton**
 
  > This code works perfectly in a single-threaded context, but can fail badly in a multithreaded context.
 

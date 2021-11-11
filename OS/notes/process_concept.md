@@ -263,4 +263,4 @@ int main()
     }
 }
 ```
-This is zombie process because we are not managing the child process by storing its PIDs
+This is zombie process because we are not managing the child process by storing its PIDs. Its like creating objects and not assigning them to proper variable and since program is running and continuously in causing memory leak.

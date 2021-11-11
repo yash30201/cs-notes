@@ -52,7 +52,9 @@ Here, a process keeps the CPU until its execution terminates to switches to wait
 ---
 <br>
 
-## Dispatcher
+## Dispatcher 
+
+> Dispatcher is right hand man of CPU scheduler
 
 A dispatcher is a module responsible switching the CPU from one process to another process selected by the scheduler.
 
@@ -89,6 +91,8 @@ This includes time for:
 **Response time** : Time from submission to first response <br>
 *Variance in response time should be minimal*
 
+**Service time** : Amount of time after which a process an start execution. It's equal to summation of CPU burst time of previous processes.<br>
+
 **Waiting time** : Time spent in the ready queue(as waiting for I/O is independent of scheduling)
 
 
@@ -104,7 +108,7 @@ This includes time for:
 Needs no explanation.
 
 + High average response time
-+ **Convoy effect** : Several small processes may need to wait if a large proces is given to the CPU
++ **Convoy effect** : Several small processes may need to wait if a large process is given to the CPU. **Note** : This is not starvation as it's fixed that a process will get CPU whereas in starvation, the starving process is continuously denied CPU time.
 
 <br>
 
@@ -113,7 +117,7 @@ Needs no explanation.
 + process with the smallest next CPU burst is selected
 + FCFS to break ties
 
-> It's ore-emptive version is Shortest remaining time first
+> It's pre-emptive version is Shortest remaining time first
 
 <br>
 
@@ -124,7 +128,7 @@ Needs no explanation.
 
 > **Ageing** : Gradual increase in the priority of process waiting for a long time
 
-> **Priority inversion** : A low-priority process get the priority of a high priority process waiting for it.
+> **Priority inversion** : This is the phenomena when low-priority process directly supersedes a high priority process.
 
 <br>
 
@@ -135,7 +139,7 @@ Needs no explanation.
 + If time quantum is too large, this behaves like FCFS
 + Pre-emptive
 + New processes and head processes run for more than 1 quantum are added to the tail.
-+ Rule of thumb : *0% CPU bursts should be shorter than the time quantum
++ Rule of thumb : 80% CPU bursts should be shorter than the time quantum
 
 <br>
 

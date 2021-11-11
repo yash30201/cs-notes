@@ -24,7 +24,7 @@ One process must wait until another finishes its execution of critical section.
 
 1. Mutual exclusion
 2. Progress => If no process is in its critical section and any process want to execute its critical section then it must be allowed.
-3. Bounded waiting => After a process makes a request fir getting into critical section, there must be a limit for how many other process can get into their critical section.
+3. Bounded waiting => After a process makes a request for getting into critical section, there must be a limit for how many other process can get into their critical section.
 
 <br>
 
@@ -35,7 +35,7 @@ This is widely used and software-based solution to critical section problems
 ```cpp
 // Shared variables
     int turn;
-    bool flag[N];
+    bool flag[2];
 
 // Code for any Pi
     do{
@@ -44,10 +44,11 @@ This is widely used and software-based solution to critical section problems
         while(flag[j] && turn == j);
         critical section
         flag[i] = false;
-        // Give chance to another process that is ready to enter by setting turn
         remainder section
     }while(true);
 ```
+
+> Here i and j are two process and this solution is for two processes. Its like i = 0, j = 1
 
 <br>
 
@@ -61,6 +62,15 @@ Many systems provide hardware support for critical section code.
 
 
 To solve this problem, **Mutex lock** is used.
+
+### Mutex vs Semaphores
+
++ Mutex is a locking mechanism
++ Semaphores are signalling mechanism
++ Mutex and Binary semaphore may seem same by inherently they work of different concepts but both shared same problems of deadlock and priority inversion
++ Mutex can only be unlocked by the context with locked it, whereas semaphores can be unlocked by others also.
++ In semaphores, we divide the shared resources into parts so that many processes can work on different part.
++ But in mutex, only one thread can access a shared resource at a time.
 
 In this approach, in the entry section of code, a LOCK is acquired over the critical resources modified and used inside the critical section, and in the exit section that LOCK is released.
 
@@ -108,7 +118,7 @@ signal(S);
 
 **Counting semaphores** : These are the unbounded integer valued variables whose count is the number of resources available.
 
-**Binary Semaphores** : (aka **Mutex Locks** )Their count is restricted to 0 and 1, thus are easier to implement.
+**Binary Semaphores** : Their count is restricted to 0 and 1, thus are easier to implement.
 
     This doesn't seems dead lock free !
 
@@ -222,10 +232,12 @@ signal(semaphore s){
 
 ### Producer Consumer problem
 
+We use 3 semaphore variables to solve this problem
+
 ```cpp
 Number of buffers = n
 Semaphores –
-mutex = 1; //access to buffers
+lock = 1; //At any time, only one among the producer and consumer can access the shared memory
 empty = n;
 full = 0;
 ```
@@ -235,9 +247,9 @@ This is producer
 ```cpp
 do { // produce an item
     wait (empty);
-    wait (mutex);
+    wait (lock);
     // add the item to the buffer
-    signal (mutex);
+    signal (lock);
     signal (full);
 } while (true);
 ```
@@ -247,9 +259,9 @@ This is consumer
 ```cpp
 do { 
     wait (full);
-    wait (mutex);
+    wait (lock);
     // remove an item from buffer
-    signal (mutex);
+    signal (lock);
     signal (empty);
     // consume the item
 } while (true);

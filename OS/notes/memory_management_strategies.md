@@ -54,6 +54,8 @@ Address space means all the space that the program can touch.
 
 ## Internal vs External Fragmentation
 
+> Internal matlab andar rukwa sakta process ko by external matlab bahar rehna hoga process ko
+
 ### Internal Fragmentation
 
 Main memory is split in mounted sized blocks and this size if bigger than required by a process causing internal fragmentation(wastage) of memory within block.
@@ -137,12 +139,12 @@ Note, if it doesn't exits, then CPU again access the Page table memory to retrie
 
 Hence,
 
-Effective access time = h * (t<sub>tlb</sub>+ t<sub>mem</sub>) + (1 - h) * (t<sub>tlb</sub> + t<sub>mem</sub>)
+Effective access time = h * (t<sub>tlb</sub>+ t<sub>mem</sub>) + (1 - h) * (t<sub>tlb</sub> + 2t<sub>mem</sub>)
 
-    where,<br>
-    Hit ratio = h<br>
-    TLB access time = t<sub>tlb</sub><br>
-    Memory access time = t<sub>mem</sub>
+where,<br>
+Hit ratio = h<br>
+TLB access time = t<sub>tlb</sub><br>
+Memory access time = t<sub>mem</sub>
 
 <br>
 
@@ -172,7 +174,7 @@ Where as in segmentation, segments are of variable-length. Segment map us used f
 Main memory is divided into two types of partitions : 
 
 1. Low memory : OS resides here
-2. High memory : User processes are help in high memory
+2. High memory : User processes are held in high memory
 
 <br>
 
@@ -198,7 +200,7 @@ In this, its done dynamically.
 
 ### Comparison between static and dynamic loading
 
-In static, every think happens in compile time. The entire program and subroutines will be linked and compiled without the need of any extrenal module or program.
+In static, everything happens in compile time. The entire program and subroutines are linked and compiled without the need of any external module or program.
 
 In dynamic, references are provided and the loading is done at the time of execution. Routines are loaded only when they are required.
 

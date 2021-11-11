@@ -81,7 +81,7 @@ EG : weapon systems, medical imaging systems
 ---
 <br>
 
-> SRAM is faster than DRAM, hence used to L2 and L# cache. [full article](https://www.guru99.com/sram-vs-dram-difference.html)
+> SRAM is faster than DRAM, hence used to L2 and L3 cache. [full article](https://www.guru99.com/sram-vs-dram-difference.html)
 
 <br>
 
@@ -89,7 +89,7 @@ EG : weapon systems, medical imaging systems
 
 <br>
 
-> Virtualisation vs Containerization,<br> => Hardware level virtualisation vs os-level virtualisation <br> [full article](https://www.tutorialspoint.com/difference-between-virtualization-and-containerization)
+> Virtualisation vs Containerization => (Virtual Machine vs Docker)<br> => Hardware level virtualisation vs os-level virtualisation <br> [full article](https://www.tutorialspoint.com/difference-between-virtualization-and-containerization)
 
 <br>
 
@@ -108,7 +108,7 @@ EG : weapon systems, medical imaging systems
 <br>
 
 ### Compiler and Interpreter
-Converts converts high level language to low level assembly language in one scoop or one line at a time respectively
+Converts high level language to low level assembly language in one scoop or one line at a time respectively
 
 ### Assembler
 Converts the assembly code into machine code
@@ -196,4 +196,4 @@ It's an approach where core functionality is isolated from system services via u
 
 -> If POST is successful, the boot loader(GRUB in linux) loads the OS from the computer into memory.(system kernels and user kernels are loaded)
 
--> Lastly, in Init check the records for initial system state to be loaded, starts up various various supporting services like drivers. For eg, X server daemon manages mouse, keyboard, and display. Its only after atarting this that we see GUI / login screen.
+-> Lastly, in Init check the records for initial system state to be loaded, starts up various various supporting services like drivers. For eg, X server daemon manages mouse, keyboard, and display. Its only after starting this that we see GUI / login screen. 
