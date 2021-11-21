@@ -127,7 +127,9 @@ At least one of the functional dependency ({1} , {2}) must be true for this deco
 ---
 <br>
 
-## Domain key normal form in DBMS
+## Denormalization
+
+Denormalization is a database optimization technique where we add redundant data in the database to get rid of the complex join operations. 
 
 
 
