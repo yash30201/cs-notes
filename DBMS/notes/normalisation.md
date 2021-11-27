@@ -30,7 +30,10 @@ For eg here, Course fee is partially dependent on course no which is a subset of
 
 => The relation should not contain any multivalued attribute. Every attribute should be single valued.
 
-Every relation in a relational database is always at-least in 1NF. 
+Process is as follows -
++ Create a new table where the each value in the multivalued attribute will have its own primary key and a referencing key(from parent table) to each of its columns.
+
++ See [here](https://www.tutorialspoint.com/sql/first-normal-form.htm) if confused.
 
 <br>
 
@@ -69,7 +72,7 @@ Every 3NF relation is said to be in BCNF if for every FD in 3NF, the LHS is a su
 ---
 <br>
 
-## Minimum relations satisfying 1NF
+## Minimum relations satisfying 1NF [Samajh nahi aaya aache se ye]
 
 Rules - 
 
