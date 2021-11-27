@@ -49,7 +49,8 @@ Every 1NF relation where it doesn't has any partial dependency is called to be i
 ### Third Normal Form
 <br>
 
-Every 2NF having no transitive dependency is in 3NF. 
+Every 2NF having no transitive dependency for non-prime attributes is in 3NF. 
+Here we check relationship between non-prime -> non-prime attribute(coz all other realtionships have been dissimated by 2NF)
 
 In other words a relation is in 3NF if at-least one the following holds true for every non-trivial dependency X->Y: 
 + X is a super key
@@ -129,7 +130,9 @@ At least one of the functional dependency ({1} , {2}) must be true for this deco
 ---
 <br>
 
-## Domain key normal form in DBMS
+## Denormalization
+
+Denormalization is a database optimization technique where we add redundant data in the database to get rid of the complex join operations. 
 
 
 
