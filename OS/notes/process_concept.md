@@ -104,11 +104,7 @@ Stores temporary data i.e. function parameters, return addresses, and local vari
 We already know it..One extra point is process' are isolated and do not share memory with other process
 
 ### Threads
-They are segment of a process => processes can have multiple threads.
-
-They only have 3 states - running, waiting and blocked
-
-They share memory, this are not completely isolated.
+Thread is a smallest sequence of instructions in a program which can be managed independently.
 
 <br>
 
@@ -221,7 +217,7 @@ Moreover, there can be three configurations for sender and receiver :
 
 Very simplistic analogy is just a water pipe where sender pours water(message) at one end and receiver collets water(message from other end)
 
-Every pipe requires two descriptors, one connected to read from pipe and one connected to write from the pipe.
+Every pipe requires two descriptors, one connected to read from pipe and one connected to write to the pipe.
 
 Parent process | Child process
 
