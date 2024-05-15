@@ -24,4 +24,6 @@ In any database, it can become a SPF if just used in a single machine. That's wh
 
 ## Database Partitioning
 
-In master slave configuration of databases, especially in read heavy systems, it's better to divert the read queries of a particular set of users to a partition and another set of users to other partition. All the reads go to the master and the reads through slaves.
+In [master slave configuration](MasterSlaveMySql.md) of databases, especially in read heavy systems, it's better to divert the read queries of a particular set of users to a partition and another set of users to other partition. All the reads go to the master and the reads through slaves.
+
+> Master Slave => Read from slaves, writes to master
