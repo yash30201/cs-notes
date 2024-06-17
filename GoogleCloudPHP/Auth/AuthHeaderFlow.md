@@ -14,7 +14,7 @@ There are two parts of the story here.
 
 > TODO: Write about this class
 
-This class implements a method called `getAuthorizationHeaderCallback` which essentially returns a **callback** (whose function is same as `updateMetadata` of `UpdateMetdataInterface`) which is used to get the auth header value.
+This class implements a method [called](https://github.com/googleapis/gax-php/blob/f1179636a64d31ee254e93d7a28d6076f583b414/src/CredentialsWrapper.php#L204-L233) `getAuthorizationHeaderCallback` which essentially returns a **callback** (whose function is same as `updateMetadata` of `UpdateMetdataInterface`) which is used to get the auth header value.
 
 ### Transport Classes
 

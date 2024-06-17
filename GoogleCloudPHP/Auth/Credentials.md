@@ -42,5 +42,23 @@ This is an **abstract class** which extends `FetchAuthTokenInterface` and `Updat
 **Inference**: Cannot use this method to alter existing metadata.
 
 
+## ServiceAccountJwtAccessCredentials
+Authenticates requests using Google's Service Account credentials via JWT Access. This class allows authorizing requests for service accounts directly from credentials from a json key file downloaded from the developer console (via `Generate new Json Key`).  It is not part of any OAuth2 flow, rather it creates a JWT and sends that as a credential.
+
+Source: It's class description
+
+## ServiceAccountCredentials
+
+This doesn't implements `UpdateMetadataInterface` and thus [this](https://github.com/googleapis/gax-php/blob/main/src/CredentialsWrapper.php#L215-L217) logic is never invoked by this.
+
+**But!!! FetchAuthTokenCache is an implementation of update metadata interface**
+
+## FetchAuthTokenCache
+
+This class wraps credentials to enable caching. This is done by overwritting the `fetchAuthToken` method defined in parent classes so that caching logic can be injected there.
+
+
+
+
 
 
